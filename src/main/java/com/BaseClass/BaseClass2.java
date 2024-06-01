@@ -2,17 +2,14 @@ package com.BaseClass;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -61,12 +58,6 @@ public class BaseClass2 {
 	}
 	
 	
-//	@AfterTest
-//	public void closeBrowser() {
-//		extent.flush();
-//		driver.quit();
-//	}
-	
 	@AfterSuite
 	public void closeReport() {
 		extent.flush();
@@ -85,27 +76,3 @@ public class BaseClass2 {
 		driver.quit();
 	}
 }
-
-//	
-//	@BeforeMethod
-//	public void openBrowser() throws InterruptedException {
-//
-//		driver = new ChromeDriver();
-//		driver.manage().window().maximize();
-//		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-//		Thread.sleep(4000);
-//	}
-//	
-//	@AfterMethod
-//	public void closeBrowser(ITestResult result) throws IOException {
-////		if(result.getStatus()==ITestResult.FAILURE) {
-////			test.log(Status.FATAL, MarkupHelper.createLabel(result.getName()+" - Test Case Failed", ExtentColor.RED));
-////			test.log(Status.FATAL, MarkupHelper.createLabel(result.getThrowable()+" - Test Case Failed", ExtentColor.RED));
-////		} else if(result.getStatus()==ITestResult.SKIP) {
-////			test.log(Status.SKIP, "Skipped Test Case is: "+result.getName());
-////		} else if (result.getStatus()==ITestResult.SUCCESS) {
-////			test.log(Status.PASS, "Passed Test Case is: "+result.getName());
-////		}
-//		driver.quit(); 
-//	}
-//}
